@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">quacklabs-android</string>
+    <string name="view">View</string>
 </resources>
