@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.patito.quacklabs_android.MemberDetailsActivity
 import com.patito.quacklabs_android.R
 import com.patito.quacklabs_android.models.TeamMember
 
@@ -32,9 +33,9 @@ class TeamMemberAdapter(val teamMembers: List<TeamMember>, val parent: AppCompat
         val teamMember: TeamMember = teamMembers.get(position)
         holder.tvName.text = teamMember.name
         holder.btnAction.setOnClickListener(View.OnClickListener {
-//            val intent = Intent(this.parent, ClimaActivity::class.java)
-//            intent.putExtra("CITY", city.city)
-//            this.parent.startActivity(intent)
+            val intent = Intent(this.parent, MemberDetailsActivity::class.java)
+            intent.putExtra("member", teamMember)
+            this.parent.startActivity(intent)
         })
     }
 }
