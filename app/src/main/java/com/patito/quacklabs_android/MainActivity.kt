@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
 import com.android.volley.Response
@@ -33,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                 val members: List<TeamMember> = team.equipo
 
                 this.rvTeamMembers.adapter = TeamMemberAdapter(members, this)
-                this.rvTeamMembers.layoutManager = LinearLayoutManager(this)
+                this.rvTeamMembers.layoutManager = GridLayoutManager(this, 2)
             }, Response.ErrorListener { error ->
                 Log.e("MainActivity", "Error en la petición ${error.toString()}")
             })

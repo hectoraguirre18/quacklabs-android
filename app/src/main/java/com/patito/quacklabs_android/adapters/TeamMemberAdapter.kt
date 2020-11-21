@@ -15,7 +15,8 @@ import com.patito.quacklabs_android.models.TeamMember
 class TeamMemberAdapter(val teamMembers: List<TeamMember>, val parent: AppCompatActivity) : RecyclerView.Adapter<TeamMemberAdapter.ViewHolder>(){
     inner class ViewHolder(listItem: View) : RecyclerView.ViewHolder(listItem) {
         val tvName: TextView = itemView.findViewById(R.id.tvName)
-        val btnAction: Button = itemView.findViewById(R.id.btnAction)
+        val tvDescription: TextView = itemView.findViewById(R.id.tvDescription)
+        val layout: View = itemView.findViewById(R.id.item_layout)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,7 +33,8 @@ class TeamMemberAdapter(val teamMembers: List<TeamMember>, val parent: AppCompat
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val teamMember: TeamMember = teamMembers.get(position)
         holder.tvName.text = teamMember.name
-        holder.btnAction.setOnClickListener(View.OnClickListener {
+        holder.tvDescription.text = teamMember.description
+        holder.layout.setOnClickListener(View.OnClickListener {
             val intent = Intent(this.parent, MemberDetailsActivity::class.java)
             intent.putExtra("member", teamMember)
             this.parent.startActivity(intent)
