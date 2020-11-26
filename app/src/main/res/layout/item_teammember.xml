@@ -46,7 +46,7 @@
                 tools:text="Hector Rene"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#3b3b3b"
+                android:textColor="#E9E9E9"
                 app:layout_constraintTop_toBottomOf="@id/memberPhoto"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"/>

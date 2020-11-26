@@ -6,17 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".MemberDetailsActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="12dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/placeholder"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintDimensionRatio="1:1"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -28,34 +31,56 @@
 
     <TextView
         android:id="@+id/txtName"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:layout_margin="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline"/>
+        app:layout_constraintTop_toBottomOf="@id/guideline"
+        android:layout_gravity="center_horizontal"
+        android:textSize="24sp"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:textStyle="bold"/>
 
     <TextView
-        android:id="@+id/txtLanguages"
-        android:layout_width="match_parent"
+        android:id="@+id/txtLastName"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="32dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@id/txtDescription"
+        app:layout_constraintTop_toBottomOf="@+id/txtName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtName" />
+        android:layout_gravity="center_horizontal"
+        android:textSize="24sp"
+        android:layout_marginTop="9dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:textStyle="bold"
+        android:text="TextView"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvLanguages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/txtDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLastName" />
 
     <TextView
         android:id="@+id/txtDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="32dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_margin="32dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvLanguages"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtLanguages" />
+        android:textSize="16sp"/>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
