@@ -7,6 +7,6 @@ class TeamMember(
     val lastName: String,
     val languages: List<String>,
     val description: String,
-    val imageUrl: String
+    val imageRoute: String
 ) : Serializable {
 }

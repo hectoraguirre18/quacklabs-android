@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val queue = Volley.newRequestQueue(this)
-        val url = "https://quacklabs.herokuapp.com/team"
+        val url = "https://quacklabs.herokuapp.com/about"
 
         val jsonRequest : StringRequest = StringRequest(Request.Method.GET, url,
             Response.Listener { response ->
