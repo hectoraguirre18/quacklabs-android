@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                 val members: List<TeamMember> = team.equipo
 
                 this.rvTeamMembers.adapter = TeamMemberAdapter(members, this)
-                this.rvTeamMembers.layoutManager = GridLayoutManager(this, 2)
+                this.rvTeamMembers.layoutManager = LinearLayoutManager(this)
             }, Response.ErrorListener { error ->
                 Log.e("MainActivity", "Error en la petición ${error.toString()}")
             })
